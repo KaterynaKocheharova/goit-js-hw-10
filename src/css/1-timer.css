@@ -1,21 +1,55 @@
-.header {
-  padding: 20px 0;
+@import url('./reset.css');
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #f7f7f7;
 }
 
-.nav-list {
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.home-section {
+  margin-bottom: 7rem;
+}
+
+.input-container {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 10rem;
 }
 
-.nav-link {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+.home-link {
+  font-size: 2rem;
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+.date-input,
+.start-timer-btn {
+  padding: .5rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 3rem;
+  color: #542929;
+  background-color: #fff;
 }
+
+.timer {
+  display: flex;
+  column-gap: 3rem;
+  flex-wrap: wrap;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #542929;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+

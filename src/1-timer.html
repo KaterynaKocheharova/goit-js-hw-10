@@ -5,14 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 2</title>
+    <link rel="stylesheet" href="./css/1-timer.css">
   </head>
   <body>
-    <section>
-      <a href="./index.html">Go to home</a>
-    </section>
 <!-- TIMER -->
-<input type="text" id="datetime-picker" />
-<button type="button" data-start>Start</button>
+
+<div class="container">
+  <section class="home-section">
+    <a class="home-link" href="./index.html">Go to home</a>
+  </section>
+
+  <div class="input-container">
+<input class="date-input" type="text" id="datetime-picker" />
+<button class="start-timer-btn" type="button" data-start>Start</button>
+</div>
 
 <div class="timer">
   <div class="field">
@@ -31,6 +37,7 @@
     <span class="value" data-seconds>00</span>
     <span class="label">Seconds</span>
   </div>
+</div>
 </div>
 
     <!-- SCRIPTS -->
