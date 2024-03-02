@@ -7,12 +7,18 @@ import "flatpickr/dist/flatpickr.min.css";
 
 const options = {
     enableTime: true,
-    time_24hr: true,
+    // !!! don't see the difference
+    // dateFormat: "Y-m-d H:i",
+    // !!! recommended but not needed
+    // altInput: true,
+    // altFormat: "F j, Y",
+    // dateFormat: "Y-m-d",
+    // time_24hr: true,
     defaultDate: new Date(),
-    minuteIncrement: 1,
-    onClose(selectedDates) {
-      console.log(selectedDates[0]);
-    },
+    // minuteIncrement: 1,
+    // onClose(selectedDates) {
+    //   console.log(selectedDates[0]);
+    // },
   };
   
 const myTimePicker = flatpickr("#datetime-picker", options);
