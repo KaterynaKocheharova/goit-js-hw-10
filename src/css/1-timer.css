@@ -1,8 +1,6 @@
 @import url('./reset.css');
 
-body, html {
-  height: 100%;
-  width: 100%;
+body {
   background-color: #f7f7f7;
 }
 
@@ -19,6 +17,7 @@ body, html {
 
 .input-container {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 10rem;
