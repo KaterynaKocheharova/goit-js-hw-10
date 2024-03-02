@@ -7,11 +7,16 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 const btn = document.querySelector('[data-start]');
 btn.disabled = true;
+const daysField = document.querySelector("[data-days]");
+const hoursField = document.querySelector("[data-hours]");
+const minutesField = document.querySelector("[data-minutes]");
+const secondsField = document.querySelector("[data-seconds]");
+
 
 // USER SELECTED DATE
 let userSelectedDate;
 
-// GLATPICKER WITH OPTIONS
+// FLATPICKER WITH OPTIONS
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -36,39 +41,51 @@ const myTimePicker = flatpickr('#datetime-picker', options);
 // HANDLE BACKWARDS TIMER BTN
 
 function backwardsTimer() {
+btn.disabled = true;
+let intervalId;
 
 
-setInterval(() => {
+intervalId = setInterval(() => {
   let milisecTimeDif = userSelectedDate - new Date();
-  let seconds = milisecTimeDif / 1000;
-  let minutes = milisecTimeDif / 60000;
-  let hours = milisecTimeDif/ 3600000;
-  let days = milisecTimeDif /86400000;
-console.log(`Left seconds ${seconds}`)
+
+  if(milisecTimeDif <= 0) {
+    clearInterval(intervalId);
+  } else {
+    const timeObj = convertMs(milisecTimeDif);
+    let seconds = timeObj.seconds;
+    let minutes = timeObj.minutes;
+    let hours = timeObj.hours;
+    let days = timeObj.days;
+
+    secondsField.textContent = addLeadingZero(String(seconds));
+    minutesField.textContent = addLeadingZero(String(minutes));
+    hoursField.textContent = addLeadingZero(String(hours));
+    daysField.textContent = addLeadingZero(String(days));
+  }
 }, 1000)
 
 // add to spans
 }
 
-// !!! ACCESSING PROPS
+function convertMs(ms) {
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+  const days = Math.floor(ms / day);
+  const hours = Math.floor((ms % day) / hour);
+  const minutes = Math.floor(((ms % day) % hour) / minute);
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+  return { days, hours, minutes, seconds };
+}
 
-// console.log(typeof myTimePicker.currentYear);
+// ADD LEADING ZERO
 
-// Properties#
-// Once you’ve got the instance in say fp, accessing props is as simple as e.g. fp.currentYear
+function addLeadingZero(value) {
+  return value.padStart(2, '0');
+}
 
-// selectedDates#
-// The array of selected dates (Date objects).
 
-// currentYear#
-// The year currently displayed on the calendar.
 
-// currentMonth#
-// The zero-indexed month number (0-11) currently displayed on the calendar.
-
-// config#
-// The configuration object (defaults + user-specified option
-
-// ALGORYTHM
 
 
