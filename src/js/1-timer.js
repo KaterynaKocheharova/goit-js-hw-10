@@ -1,7 +1,12 @@
-// INCLUDING LIBRARY
+// INCLUDING LIBRARY FLATPICKER
 
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+
+// INCLUDING LIBRARY IZITOAST
+
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 
 // VARIABLES
 
@@ -24,7 +29,10 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
-      alert('Please choose a date in the future');
+      iziToast.show({
+        title: 'Hey',
+        message: 'Please choose a date in the future'
+    });
     } else {
       btn.disabled = false;
       userSelectedDate = selectedDates[0];
