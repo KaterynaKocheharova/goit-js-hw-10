@@ -26,6 +26,7 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  clickOpens: true, 
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
       iziToast.show({
@@ -55,7 +56,10 @@ console.log(myTimePicker);
 
 function backwardsTimer() {
 btn.disabled = true;
-myTimePicker._input.disabled = true;
+// myTimePicker._input.disabled = true;
+options.clickOpens = false;
+
+
 
 // !!! How to disable input?
 let intervalId;
