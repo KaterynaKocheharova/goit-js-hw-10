@@ -136,3 +136,9 @@ span.flatpickr-weekday {
   background-color: transparent;
 } */
 /* ALERT */
+
+.icon-bi_x-octagon:before {
+  content: "\e900";
+  color: #fafafb;
+}
+
