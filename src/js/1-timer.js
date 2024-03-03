@@ -5,8 +5,8 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 // INCLUDING LIBRARY IZITOAST
 
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 // =========================================== VARIABLES ===================================================
 
@@ -15,10 +15,10 @@ const btn = document.querySelector('[data-start]');
 btn.disabled = true;
 
 // TIMER INTERFACE DAYS, HOURS ETC ELEMENTS
-const daysField = document.querySelector("[data-days]");
-const hoursField = document.querySelector("[data-hours]");
-const minutesField = document.querySelector("[data-minutes]");
-const secondsField = document.querySelector("[data-seconds]");
+const daysField = document.querySelector('[data-days]');
+const hoursField = document.querySelector('[data-hours]');
+const minutesField = document.querySelector('[data-minutes]');
+const secondsField = document.querySelector('[data-seconds]');
 
 // USER SELECTED DATE
 let userSelectedDate;
@@ -33,6 +33,7 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
       iziToast.show({
+        close: false,
         message: 'Please choose a date in the future',
         messageColor: 'rgb(255, 255, 255)',
         messageSize: '16px',
@@ -40,12 +41,12 @@ const options = {
         icon: '',
         iconColor: 'rgb(250, 250, 251)',
         maxWidth: 302,
-        position: 'topRight', 
-    });
+        position: 'topRight',
+      });
     } else {
       btn.disabled = false;
       userSelectedDate = selectedDates[0];
-      btn.addEventListener("click", backwardsTimer);
+      btn.addEventListener('click', backwardsTimer);
     }
   },
 };
@@ -57,29 +58,29 @@ console.log(myTimePicker);
 // ================================================ HANDLE COUNTDOWN ===========================================
 
 function backwardsTimer() {
-btn.disabled = true;
-myTimePicker.set("clickOpens", false);
+  btn.disabled = true;
+  myTimePicker.set('clickOpens', false);
 
-let intervalId;
+  let intervalId;
 
-intervalId = setInterval(() => {
-  let milisecTimeDif = userSelectedDate - new Date();
+  intervalId = setInterval(() => {
+    let milisecTimeDif = userSelectedDate - new Date();
 
-  if(milisecTimeDif <= 0) {
-    clearInterval(intervalId);
-  } else {
-    const timeObj = convertMs(milisecTimeDif);
-    let seconds = timeObj.seconds;
-    let minutes = timeObj.minutes;
-    let hours = timeObj.hours;
-    let days = timeObj.days;
+    if (milisecTimeDif <= 0) {
+      clearInterval(intervalId);
+    } else {
+      const timeObj = convertMs(milisecTimeDif);
+      let seconds = timeObj.seconds;
+      let minutes = timeObj.minutes;
+      let hours = timeObj.hours;
+      let days = timeObj.days;
 
-    secondsField.textContent = addLeadingZero(String(seconds));
-    minutesField.textContent = addLeadingZero(String(minutes));
-    hoursField.textContent = addLeadingZero(String(hours));
-    daysField.textContent = addLeadingZero(String(days));
-  }
-}, 1000)
+      secondsField.textContent = addLeadingZero(String(seconds));
+      minutesField.textContent = addLeadingZero(String(minutes));
+      hoursField.textContent = addLeadingZero(String(hours));
+      daysField.textContent = addLeadingZero(String(days));
+    }
+  }, 1000);
 }
 
 // ============================================== CONVERT MS FUNCTION =========================================
@@ -101,8 +102,3 @@ function convertMs(ms) {
 function addLeadingZero(value) {
   return value.padStart(2, '0');
 }
-
-
-
-
-
