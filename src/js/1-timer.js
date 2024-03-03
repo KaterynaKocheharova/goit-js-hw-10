@@ -8,10 +8,13 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-// VARIABLES
+// =========================================== VARIABLES ===================================================
 
+// BUTTON
 const btn = document.querySelector('[data-start]');
 btn.disabled = true;
+
+// TIMER INTERFACE DAYS, HOURS ETC ELEMENTS
 const daysField = document.querySelector("[data-days]");
 const hoursField = document.querySelector("[data-hours]");
 const minutesField = document.querySelector("[data-minutes]");
@@ -20,25 +23,24 @@ const secondsField = document.querySelector("[data-seconds]");
 // USER SELECTED DATE
 let userSelectedDate;
 
-// FLATPICKER WITH OPTIONS
+// ======================================= FLATPICKER OPTIONS ===============================================
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  clickOpens: true, 
+  clickOpens: true,
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
       iziToast.show({
-        title: 'Hey',
         message: 'Please choose a date in the future',
-        position: 'topRight',
-        titleColor: 'white',
-        titleSize: '24px',
-        messageColor: 'white',
-        messageSize: '24px',
-        backgroundColor: '#542929',
-        color: 'white', 
+        messageColor: 'rgb(255, 255, 255)',
+        messageSize: '16px',
+        backgroundColor: 'rgb(239, 64, 64)',
+        icon: '',
+        iconColor: 'rgb(250, 250, 251)',
+        maxWidth: 302,
+        position: 'topRight', 
     });
     } else {
       btn.disabled = false;
@@ -48,22 +50,17 @@ const options = {
   },
 };
 
-
+// =============================================== CREATING TIME PICKER ========================================
 const myTimePicker = flatpickr('#datetime-picker', options);
 console.log(myTimePicker);
 
-// HANDLE BACKWARDS TIMER BTN
+// ================================================ HANDLE COUNTDOWN ===========================================
 
 function backwardsTimer() {
 btn.disabled = true;
-// myTimePicker._input.disabled = true;
-myTimePicker.config.clickOpens =  false;
+myTimePicker.set("clickOpens", false);
 
-
-
-// !!! How to disable input?
 let intervalId;
-
 
 intervalId = setInterval(() => {
   let milisecTimeDif = userSelectedDate - new Date();
@@ -83,9 +80,9 @@ intervalId = setInterval(() => {
     daysField.textContent = addLeadingZero(String(days));
   }
 }, 1000)
-
-// add to spans
 }
+
+// ============================================== CONVERT MS FUNCTION =========================================
 
 function convertMs(ms) {
   const second = 1000;
@@ -99,7 +96,7 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-// ADD LEADING ZERO
+// ================================================ ADD LEADING ZERO ==========================================
 
 function addLeadingZero(value) {
   return value.padStart(2, '0');

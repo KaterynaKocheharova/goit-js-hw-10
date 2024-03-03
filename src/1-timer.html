@@ -5,26 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/1-timer.css" />
   </head>
   <body>
     <!-- TIMER -->
 
-    <section class="home-section">
-      <div class="container">
-        <a class="home-link" href="./index.html">Go to home</a>
-      </div>
-    </section>
-
     <section class="timer-section">
       <div class="container">
-        <div class="input-container">
-          <input class="date-input" type="text" id="datetime-picker" />
-          <button class="start-timer-btn" type="button" data-start>
-            Start
-          </button>
-        </div>
+        <!-- INPUT -->
+        <p class="home-link"><a href="./index.html">Go Home</a></p>
+        <input class="time-picker-input" type="text" id="datetime-picker" />
+        <button class="set-timer-btn" type="button" data-start>Start</button>
 
+        <!-- INTERFACE -->
         <div class="timer">
           <div class="field">
             <span class="value" data-days>00</span>

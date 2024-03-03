@@ -1,4 +1,17 @@
 /* Reset styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.home-link {
+  margin-bottom: 3rem;
+}
+
 h1,
 h2,
 h3,
