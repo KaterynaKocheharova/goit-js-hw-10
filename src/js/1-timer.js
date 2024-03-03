@@ -16,7 +16,7 @@ const daysField = document.querySelector("[data-days]");
 const hoursField = document.querySelector("[data-hours]");
 const minutesField = document.querySelector("[data-minutes]");
 const secondsField = document.querySelector("[data-seconds]");
-
+const dateInput = document.querySelector(".date-input")
 
 // USER SELECTED DATE
 let userSelectedDate;
@@ -31,7 +31,14 @@ const options = {
     if (selectedDates[0] < new Date()) {
       iziToast.show({
         title: 'Hey',
-        message: 'Please choose a date in the future'
+        message: 'Please choose a date in the future',
+        position: 'topRight',
+        titleColor: 'white',
+        titleSize: '24px',
+        messageColor: 'white',
+        messageSize: '24px',
+        backgroundColor: '#542929',
+        color: 'white', 
     });
     } else {
       btn.disabled = false;
@@ -44,12 +51,14 @@ const options = {
 
 const myTimePicker = flatpickr('#datetime-picker', options);
 
-
+console.log(myTimePicker)
 
 // HANDLE BACKWARDS TIMER BTN
 
 function backwardsTimer() {
 btn.disabled = true;
+
+// !!! How to disable input?
 let intervalId;
 
 
