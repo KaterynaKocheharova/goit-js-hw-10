@@ -57,6 +57,7 @@ console.log(myTimePicker)
 
 function backwardsTimer() {
 btn.disabled = true;
+dateInput.disabled = true;
 
 // !!! How to disable input?
 let intervalId;
