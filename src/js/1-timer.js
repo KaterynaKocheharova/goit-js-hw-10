@@ -16,7 +16,6 @@ const daysField = document.querySelector("[data-days]");
 const hoursField = document.querySelector("[data-hours]");
 const minutesField = document.querySelector("[data-minutes]");
 const secondsField = document.querySelector("[data-seconds]");
-const dateInput = document.querySelector(".date-input")
 
 // USER SELECTED DATE
 let userSelectedDate;
@@ -50,14 +49,13 @@ const options = {
 
 
 const myTimePicker = flatpickr('#datetime-picker', options);
-
-console.log(myTimePicker)
+console.log(myTimePicker);
 
 // HANDLE BACKWARDS TIMER BTN
 
 function backwardsTimer() {
 btn.disabled = true;
-dateInput.disabled = true;
+myTimePicker._input.disabled = true;
 
 // !!! How to disable input?
 let intervalId;
