@@ -57,7 +57,7 @@ console.log(myTimePicker);
 function backwardsTimer() {
 btn.disabled = true;
 // myTimePicker._input.disabled = true;
-options.clickOpens = false;
+myTimePicker.config.clickOpens =  false;
 
 
 
