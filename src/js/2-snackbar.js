@@ -30,7 +30,7 @@ function generatePromises(event) {
     } else if (stateValue === 'fulfilled') {
       promise = Promise.resolve(delayValue);
     }
-
+  
     // handling returned promise
     promise
       .then(value => console.log(value))
