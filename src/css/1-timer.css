@@ -3,13 +3,14 @@
 /* GENERAL STYLES */
 
 .container {
-  padding-left: 156px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 
 .timer-section {
-  padding-top: 36px;
+  padding-top: 70px;
   background-color: rgb(255, 255, 255);
   letter-spacing: 0.04em;
   line-height: 1.5;
@@ -136,9 +137,4 @@ span.flatpickr-weekday {
   background-color: transparent;
 } */
 /* ALERT */
-
-/* .icon-bi_x-octagon:before {
-  content: "\e900";
-  color: #fafafb;
-} */
 

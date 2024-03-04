@@ -34,20 +34,12 @@ const options = {
     if (selectedDates[0] < new Date()) {
       iziToast.show({
         timeout: false,
-        title: 'Error',
-        titleColor: 'rgb(255, 255, 255)',
-        titleSize: '16px',
-        // icon: 'icon-bi_x-octagon',
-        iconText: '',
-        iconColor: 'white',
-        message: 'Illegal operation',
-        // message: 'Please choose a date in the future',
+        message: 'Please choose a date in the future',
         messageColor: 'rgb(255, 255, 255)',
         messageSize: '16px',
         backgroundColor: 'rgb(239, 64, 64)',
         maxWidth: 302,
         position: 'topRight',
-        class: 'my-toast',
       });
     } else {
       btn.disabled = false;
