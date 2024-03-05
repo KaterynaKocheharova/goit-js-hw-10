@@ -90,3 +90,66 @@
   background: rgb(245, 245, 245);
 }
 
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  position: static !important;
+}
+
+.flatpickr-months .flatpickr-prev-month svg,
+.flatpickr-months .flatpickr-next-month svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  color: rgb(51, 51, 51) !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important ;
+  text-align: center !important;
+  margin-bottom: 5px !important;
+}
+
+.flatpickr-current-month
+  .flatpickr-monthDropdown-months
+  .flatpickr-monthDropdown-month {
+  color: rgb(51, 51, 51) !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important ;
+  text-align: center !important;
+}
+
+span.flatpickr-weekday {
+  color: rgb(46, 47, 66) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+.flatpickr-day.prevMonthDay,
+.flatpickr-day {
+  font-size: 16px;
+}
+
+.flatpickr-day.today {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid rgb(78, 117, 255);
+  background-color: transparent;
+}
+
+.flatpickr-months {
+  margin-bottom: 24px;
+}
+
+
+/* how to style dropdown arrow ? */
+/* how to make Su not Sun */
+
+
+
+
