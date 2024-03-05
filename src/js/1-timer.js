@@ -32,13 +32,11 @@ const options = {
   clickOpens: true,
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
-      iziToast.show({
+      iziToast.error({
         timeout: false,
         message: 'Please choose a date in the future',
-        messageColor: 'rgb(255, 255, 255)',
         messageSize: '16px',
-        backgroundColor: 'rgb(239, 64, 64)',
-        maxWidth: 302,
+        maxWidth: "300px",
         position: 'topRight',
       });
     } else {
