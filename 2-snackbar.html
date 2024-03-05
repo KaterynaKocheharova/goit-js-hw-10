@@ -10,7 +10,7 @@
     <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js">
     <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-77e16229.js">
     <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-7a007824.css">
-    <link rel="stylesheet" href="/goit-js-hw-10/assets/1-timer-3b584d3a.css">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/2-snackbar-8f0a4a03.css">
   </head>
   <body>
 
@@ -22,11 +22,11 @@
 
         <label>
           Delay (ms)
-          <input type="number" name="delay" required />
+          <input class="delay-input input" type="number" name="delay" required />
         </label>
   
-        <fieldset>
-          <legend>State</legend>
+        <fieldset class="fieldset">
+          <legend class="legend">State</legend>
           <label>
             <input type="radio" name="state" value="fulfilled" required />
             Fulfilled
@@ -37,7 +37,7 @@
           </label>
         </fieldset>
       
-        <button type="submit">Create notification</button>
+        <button class="notification-btn" type="submit">Create notification</button>
       </form>
       
 
