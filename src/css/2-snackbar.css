@@ -33,3 +33,7 @@ font-weight: 500;
 line-height: 1.5;
 letter-spacing: 0.04em;
 }
+
+.form-section input[type="datetime-local" i]::-webkit-calendar-picker-indicator {
+ background-size: 100px;
+}
