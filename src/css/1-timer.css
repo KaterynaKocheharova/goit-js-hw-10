@@ -84,14 +84,17 @@
 /* FLATPICKER CALENDER */
 
 .flatpickr-calendar.open {
-  max-width: 280px;
   background-color:rgb(245, 245, 245);
-  /* padding: 16px; */
+}
 
+.flatpickr-calendar.open, .flatpickr-calendar.inline {
+  max-width: unset;
+  padding: 16px;
 }
 
 /* next svg ??? */
-.flatpickr-calendar.open .flatpickr-current-month .flatpickr-monthDropdown-months {
+.flatpickr-calendar.open .flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-calendar.open .flatpickr-current-month input.cur-year  {
 font-size: 16px;
 font-weight: 600;
 line-height: 1.25;
@@ -99,10 +102,29 @@ width: 88px;
 margin-right: 32px;
 }
 
+.flatpickr-calendar.open span.flatpickr-weekday {
+color: rgb(46, 47, 66);
+font-size: 16px;
+font-weight: 500;
+line-height: 1.5;
+}
 
+.flatpickr-months {
+  margin-bottom: 24px;
+}
 
+.flatpickr-calendar.open .flatpickr-day {
+color: rgb(102, 102, 102);
+font-size: 16px;
+font-weight: 400;
+line-height: 1.5;
+}
 
+.flatpickr-weekdaycontainer {
+  margin-bottom: 16px;
+}
 
+/* prevArrow	String	<	HTML for the left arrow icon. */
 
 
 
